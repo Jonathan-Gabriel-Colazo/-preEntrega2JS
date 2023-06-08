@@ -85,7 +85,7 @@ function agregarProducto() {
     console.log(listaProductos);
 }
 
-document.getElementById('formAgregaP').addEventListener('submit', function (event) {
+document.getElementById('formAgregaP').addEventListener('submit', (event) => {
     event.preventDefault();
     agregarProducto();
     guardarElementos();
@@ -93,20 +93,20 @@ document.getElementById('formAgregaP').addEventListener('submit', function (even
 
 let formAgregaP = document.getElementById('formAgregaP');
 
-const agregarProductoButton = document.getElementById('agregarProducto').addEventListener('click', function () {
+const agregarProductoButton = document.getElementById('agregarProducto').addEventListener('click', () => {
     formAgregaP.style.display = "flex";
 });
 
 console.log(listaProductos.length);
 
-document.getElementById('ocultarAgregaP').addEventListener('click', function () {
+document.getElementById('ocultarAgregaP').addEventListener('click', () => {
     formAgregaP.style.display = "none";
 });
 
 function buscarProducto() {
     let buscaProducto = document.getElementById('buscaProducto').value;
 
-    let productoEncontrado = listaProductos.find(function (product) {
+    let productoEncontrado = listaProductos.find((product) => {
         return product.nombre === buscaProducto;
     });
 
@@ -120,11 +120,11 @@ function buscarProducto() {
 
 document.getElementById('buscaButton').addEventListener('click', buscarProducto);
 
-document.getElementById('deleteProducto').addEventListener('click', function () {
+document.getElementById('deleteProducto').addEventListener('click', () => {
     eliminaProducto.style.display = "flex";
 });
 
-document.getElementById('ocultarEliminaP').addEventListener('click', function () {
+document.getElementById('ocultarEliminaP').addEventListener('click', () => {
     eliminaProducto.style.display = "none";
 });
 
@@ -148,3 +148,5 @@ function eliminarProducto() {
 }
 
 document.getElementById('eliminaButton').addEventListener('click', eliminarProducto);
+
+
