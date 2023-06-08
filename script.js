@@ -132,13 +132,12 @@ function eliminarProducto() {
     let eliminaProduct = document.getElementById('eliminaProduct').value;
 
     let indice = -1;
-    for (let i = 0; i < listaProductos.length; i++) {
-        if (listaProductos[i].nombre === eliminaProduct) {
-            indice = i;
-            break;
-        }
-    }
 
+    listaProductos.forEach((producto,i) => {
+        if (producto.nombre === eliminaProduct) {
+            indice = i;
+        }
+    });
     if (indice !== -1) {
         listaProductos.splice(indice, 1);
         alert('Eliminaste el producto: ' + eliminaProduct);
