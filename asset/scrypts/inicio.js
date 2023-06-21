@@ -64,6 +64,10 @@ document.getElementById('nUser').addEventListener('click', () => {
     formNewUser.style.display = "flex";
 });
 
+document.getElementById('RevalidaDatos').addEventListener('click', () => {
+    recuperaUsuario.style.display = "flex";
+});
+
 function agregaUsuario() {
     let nombre = document.getElementById('ingName').value;
     let fechaN = document.getElementById('ingDate').value;
@@ -126,18 +130,22 @@ function RecuperUsuario() {
         }
     });
 
-    if (acces) {
+    if (acces==true) {
         Swal.fire('Tu clave es ' + listaUsuarios[indice].pass);
+        recuperaUsuario.style.display = "none";
     } else {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Los datos no coinciden!',
+
         });
+        recuperaUsuario.style.display = "none";
     }
 
 }
 
 document.getElementById("buttonRus").addEventListener("click", () =>
     RecuperUsuario(),
+    recuperaUsuario.style.display = "none",
 )
