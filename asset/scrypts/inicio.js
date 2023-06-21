@@ -9,7 +9,7 @@ function Nusuario(nombre, fechaN, telefono, email, alias, pass) {
 
 let listaUsuarios = [
     {
-        nombre: "Jonatha  Colazo",
+        nombre: "Jonathan  Colazo",
         fechaN: "28/02/1990",
         telefono: 3517535004,
         email: "jonathan34964@gmail.com",
@@ -94,12 +94,12 @@ function ingresoUsuario() {
     let acceso = false;
 
     listaUsuarios.forEach((usuario) => {
-        if (usuario.nombre === ingAlias && usuario.pass === ingPass) {
+        if (usuario.alias === ingAlias && usuario.pass === ingPass) {
             acceso = true;
         }
     });
 
-    acceso ? window.location.href = "./asset/pages/plataforma.html" : Swal.fire({
+    acceso == true ? window.location.href = "./asset/pages/plataforma.html" : Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Los datos no coinciden!',
@@ -120,7 +120,7 @@ function RecuperUsuario() {
     let indice = 0
 
     listaUsuarios.forEach((usuario, i) => {
-        if (usuario.nombre === recuAlias && usuario.email === recuEmail) {
+        if (usuario.alias === recuAlias && usuario.email === recuEmail) {
             indice = i
             acces = true;
         }
