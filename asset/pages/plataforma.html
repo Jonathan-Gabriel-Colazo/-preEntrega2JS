@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CAJA-PLUS</title>
+</head>
+
+<body>
+    <h1 class="title">trabajo practico n2 <span>JS</span></h1>
+    <h2 class="saludo">Bienvenido</h2>
+
+    <section id="botones">
+        <button id="agregarProducto"><i class="fa-sharp fa-solid fa-plus"></i></button>
+        <button id="deleteProducto"><i class="fa-solid fa-trash"></i></button>
+    </section>
+
+    <div class="formulariosBA">
+        <form class="formulariosOcultos" id="formAgregaP">
+            <label for="codigoInput">Codigo</label>
+            <input type="number" id="codigoInput" placeholder="001112220033355">
+
+            <label for="nombreInput">Nombre</label>
+            <input type="text" id="nombreInput" placeholder="Pure de tomate">
+
+            <label for="marcaInput">Marca</label>
+            <input type="text" id="marcaInput" placeholder="La Campagnola">
+
+            <label for="tamanoInput">Tamaño</label>
+            <input type="text" id="tamanoInput" placeholder="530 gr">
+
+            <label for="precioInput">Precio</label>
+            <input type="number" id="precioInput" placeholder="207,00">
+
+            <label for="familiaInput">Familia</label>
+            <select id="familiaInput">
+                <option value="Despensa">Despensa</option>
+                <option value="Verduleria">Verduleria</option>
+                <option value="Pollo">Pollo</option>
+                <option value="Cerdo">Cerdo</option>
+                <option value="Vaca">vaca</option>
+
+            </select>
+
+            <label for="stockInput">Stock</label>
+            <input type="number" id="stockInput" placeholder="600">
+
+            <button type="submit" id="agregarButon">Agregar</button>
+            <div class=up>
+                <a id="ocultarAgregaP"><i class="fa-solid fa-chevron-up"></i></a>
+            </div>
+        </form>
+
+        <form id="eliminaProducto">
+
+            <label for="elimiaProduct">Producto que desea eliminar</label>
+            <input type="text" id="eliminaProduct" placeholder="Polenta , Presto pronta">
+
+
+            <button type="submit" id="eliminaButton">Eliminar</button>
+            <div class=up>
+                <a id="ocultarEliminaP"><i class="fa-solid fa-chevron-up"></i></a>
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+    <form action="" class="formBuscarP">
+
+        <label for="buscaProducto">Producto</label>
+        <input type="text" id="buscaProducto" placeholder="Polenta , Presto pronta">
+
+
+        <button type="submit" id="buscaButton">Buscar</button>
+
+    </form>
+
+    <div id="muestraProducto">4
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer></footer>
+
+    <script src="../scrypts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

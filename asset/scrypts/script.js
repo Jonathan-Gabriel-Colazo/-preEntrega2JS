@@ -133,7 +133,7 @@ function eliminarProducto() {
 
     let indice = -1;
 
-    listaProductos.forEach((producto,i) => {
+    listaProductos.forEach((producto, i) => {
         if (producto.nombre === eliminaProduct) {
             indice = i;
         }
@@ -141,6 +141,40 @@ function eliminarProducto() {
     if (indice !== -1) {
         listaProductos.splice(indice, 1);
         alert('Eliminaste el producto: ' + eliminaProduct);
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'si, eliminar!',
+            cancelButtonText: 'No, cancelar!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                    'Eliminado!',
+                    'Eliminaste el producto: ' + eliminaProduct ,
+                    'success'
+                )
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'no se elimino el producto :)',
+                    'error'
+                )
+            }
+        })
     } else {
         console.log('No se encontró el producto');
         alert('No se encontró el producto');
